@@ -104,6 +104,7 @@ img {
 .customer-segment {
   .navbar {
     margin-bottom: 0;
+    font-weight: bold;
   }
   .line {
     width: 100vw;
@@ -112,12 +113,17 @@ img {
   }
   .list-group {
     width: 20%;
-    // height: 100vh;
+    font-weight: bold;
     button {
       border-radius: 0;
     }
     .last {
       height: 100vh;
     }
+  }
+
+  .contain {
+    display: flex;
+    flex-direction: row;
   }
 }

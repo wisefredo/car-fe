@@ -2,6 +2,7 @@ const homeCusBtn = document.querySelector('#hc-btn');
 const busCusBtn = document.querySelector('#bc-btn');
 
 /*Nav Buttons*/
+const navParent = document.querySelector('.nav-parent');
 const homebtn = document.querySelector('#home-btn');
 const browseAisles = document.querySelector('#browse-aisles');
 const deliveryPickup = document.querySelector('#delivery');
@@ -12,24 +13,30 @@ const register = document.querySelector('#register');
 const homeScreen = document.querySelector('#home-screen');
 const custScreen = document.querySelector('#customer-segment');
 
+function setActiveState(e) {
+  if(!e.target.matches('a')) return;
+  e.target.parentNode.classList.add('active');
+}
 
-function customerScreen(evt) {
+navParent.addEventListener('click', setActiveState);
+
+
+/*Routing*/
+function customerScreen(e) {
   homeScreen.style.display = 'none';
   custScreen.style.display = 'block';
 }
 
-function goHome(evt) {
+function goHome(e) {
   homeScreen.style.display = 'flex';
   custScreen.style.display = 'none';
 }
-
 
 const routes = {
   '/': goHome,
   '/customer': customerScreen,
   '/business': customerScreen
-
 };
-
+//routing contructor
 const router = Router(routes);
 router.init();
