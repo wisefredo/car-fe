@@ -15,6 +15,9 @@ const custScreen = document.querySelector('#customer-segment');
 
 function setActiveState(e) {
   if(!e.target.matches('a')) return;
+  navParent.querySelectorAll('ul li').forEach(elem => {
+    elem.classList.remove('active');
+  })
   e.target.parentNode.classList.add('active');
 }
 
