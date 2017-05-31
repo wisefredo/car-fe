@@ -27,7 +27,7 @@ function navState(e) {
   if (!e.target.matches('a')) return;
   const elem = e.target.parentNode;
   const nodeListArr = [...navParent.querySelectorAll('ul li')];
-  console.log(nodeListArr)
+  // console.log(nodeListArr)
   setActiveState(elem, nodeListArr);
 }
 // side nav state
@@ -35,7 +35,7 @@ function sideState(e) {
   if (!e.target.matches('button')) return;
   const elem = e.target;
   const nodeListArr = [...sideOptions.querySelectorAll('button')];
-  console.log(nodeListArr)
+  // console.log(nodeListArr)
   setActiveState(elem, nodeListArr);
 }
 /*event delegation to handle click of nav items*/
