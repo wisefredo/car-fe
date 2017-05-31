@@ -28,19 +28,22 @@
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <script
+      src="https://rawgit.com/flatiron/director/master/build/director.min.js">
+    </script> 
 
     <div class="container-self">
         <div class="header-top">
             <h1 class="text-muted"><span style="color: #4db6ac; font-weight: bold;">T</span>ucker!</h1>
         </div>
         <div class="hero-contain" id="home-screen">
-            <img class="header-img" src="../images/veg.jpg" alt="">
+            <!--<img class="header-img" src="../images/veg.jpg" alt="">-->
             <h1>Welcome to <span style="color: #4db6ac; font-weight: bold;">T</span>ucker!</h1>
             <p class="lead">Grocery shopping at your convenience.</p>
             <!-- CUst/Busin button -->
             <div class="btn-contain">
-                <button type="button" class="btn btn-default btn-primary" id="hc-btn">Home Customer</button>
-                <button type="button" class="btn btn-default btn-primary" id="bc-btn">Business Customer</button>
+                <a type="button" class="btn btn-default btn-primary" id="hc-btn" href="#/customer">Home Customer</a>
+                <a type="button" class="btn btn-default btn-primary" id="bc-btn" href="#/business">Business Customer</a>
             </div>
         </div>
 
@@ -55,7 +58,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#" id="home-btn">Home</a>
+                        <a class="navbar-brand" href="/" id="home-btn">Home</a>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

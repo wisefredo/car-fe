@@ -1,26 +1,27 @@
 const homeCusBtn = document.querySelector('#hc-btn');
 const busCusBtn = document.querySelector('#bc-btn');
-const homebtn = document.querySelector('#home-button');
+const homebtn = document.querySelector('#home-btn');
 const homeScreen = document.querySelector('#home-screen');
 const custScreen = document.querySelector('#customer-segment');
 
-function navigate(path) {
-    var current = window.location.href;
-    window.location.href = current.replace(/#(.*)$/, '') + '#' + path;
-}
-
 function customerScreen(evt) {
-    homeScreen.style.display = 'none';
-    custScreen.style.display = 'block';
-    navigate('customer');
+  homeScreen.style.display = 'none';
+  custScreen.style.display = 'block';
 }
 
 function goHome(evt) {
-    evt.preventDefault();
-    navigate("");
+
+  homeScreen.style.display = 'flex';
+  custScreen.style.display = 'none';
 }
 
 
+const routes = {
+  '/': goHome,
+  '/customer': customerScreen,
+  '/business': customerScreen
 
-homeCusBtn.addEventListener('click', customerScreen);
-homebtn.addEventListener('click', goHome)
+};
+
+const router = Router(routes);
+router.init();
