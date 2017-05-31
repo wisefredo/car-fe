@@ -47,26 +47,30 @@
 
     <!--customer segment-->
     <div class="customer-segment" style="display: none;" id="customer-segment">
+      <!--nav-->
       <nav class="navbar navbar-default navbar-static-top">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
               aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand" href="/" id="home-btn">Home</a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="">Browse Aisles</a></li>
-              <li><a href="#/express">Express Shops</a></li>
-              <li><a href="#/delivery">Delivery/Pick-Up</a></li>
-              <li><a href="#/login">Login</a></li>
-              <li><a href="#/register">Register</a></li>
+              <li class="active"><a href="#/customer/browse-aisles" id="browse-aisles">Browse Aisles</a></li>
+              <!--<li><a href="#/customer/express">Express Shops</a></li>-->
+              <li><a href="#/customer/delivery" id="delivery">Delivery/Pick-Up</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#/customer/login" id="login">Login</a></li>
+              <li><a href="#/customer/register" id="register">Register</a></li>
+            </ul>
             </ul>
 
 
@@ -75,6 +79,21 @@
 
         </div>
       </nav>
+      <div class="line"></div>
+      <!--End Nav-->
+      <div class="list-group">
+        <button type="button" class="list-group-item" disabled>Choose Below:</button>
+
+        <button type="button" class="list-group-item active">Meat</button>
+        <button type="button" class="list-group-item">Produce</button>
+        <button type="button" class="list-group-item">Deli</button>
+        <button type="button" class="list-group-item">Dairy</button>
+        <button type="button" class="list-group-item last" disabled></button>
+
+      </div>
+
+
+
     </div>
 
 

@@ -100,3 +100,24 @@ img {
     }
   }
 }
+
+.customer-segment {
+  .navbar {
+    margin-bottom: 0;
+  }
+  .line {
+    width: 100vw;
+    height: 20px;
+    background: #000;
+  }
+  .list-group {
+    width: 20%;
+    // height: 100vh;
+    button {
+      border-radius: 0;
+    }
+    .last {
+      height: 100vh;
+    }
+  }
+}
