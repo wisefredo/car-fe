@@ -13,15 +13,22 @@ const register = document.querySelector('#register');
 const homeScreen = document.querySelector('#home-screen');
 const custScreen = document.querySelector('#customer-segment');
 
-function setActiveState(e) {
-  if(!e.target.matches('a')) return;
-  navParent.querySelectorAll('ul li').forEach(elem => {
+function setActiveState(el, array) {
+  // if(!e.target.matches('a')) return;
+  array.forEach(elem => {
     elem.classList.remove('active');
   })
-  e.target.parentNode.classList.add('active');
+  el.parentNode.classList.add('active');
 }
 
-navParent.addEventListener('click', setActiveState);
+function navState(e) {
+  if (!e.target.matches('a')) return;
+  const elem = e.target;
+  const nodeListArr = [...navParent.querySelectorAll('ul li')];
+  console.log(nodeListArr)
+  setActiveState(elem, nodeListArr);
+}
+navParent.addEventListener('click', navState);
 
 
 /*Routing*/
