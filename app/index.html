@@ -191,8 +191,13 @@
               <li><a href="#/customer/delivery" id="delivery" data-toggle="modal" data-target="#myModal3">Delivery</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#/customer/login" id="login" data-toggle="modal" data-target="#myModalClient">Login</a></li>
-              <li><a href="#/customer/register" id="register" data-toggle="modal" data-target="#myModal2">Register</a></li>
+              <li class="loginGroup"><a href="#/customer/login" id="login" data-toggle="modal" data-target="#myModalClient">Login</a></li>
+              <li class="loginGroup"><a href="#/customer/register" id="register" data-toggle="modal" data-target="#myModal2">Register</a></li>
+              <li class="logout" style="margin-top: 14px;">
+                <form action="http://localhost:8080/customer/logout" method="get">
+                  <input class="" type="submit" value="Log Out" >
+                </form>
+              </li>
             </ul>
             </ul>
           </div>
@@ -217,7 +222,7 @@
                 <label for="password">Password</label>
                 <input name="password" type="password">
 
-                <input class="btn" type="submit" value="Log in">
+                <input class="btn" type="submit" value="Log in" id="login-button">
               </form>
             </div>
 
@@ -251,7 +256,7 @@
                 <label for="password">Password</label>
                 <input name="password" type="password" />
 
-                <input class="btn" type="submit" value="Sign Up" />
+                <input class="btn" type="submit" value="Sign Up" id="register-button" />
                 <!--<div class="form-group">
                   <label for="exampleInputName2" class="col-sm-2 control-label">Name</label>
                   <div class="col-sm-10">
