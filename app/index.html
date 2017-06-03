@@ -41,7 +41,130 @@
       <!-- CUst/Busin button -->
       <div class="btn-contain">
         <a type="button" class="btn btn-default btn-primary" id="hc-btn" href="#/customer">Home Customer</a>
-        <a type="button" class="btn btn-default btn-primary" id="bc-btn" href="#/business">Business Customer</a>
+        <!--<a class="btn btn-primary" href="#" role="button" id="sell-modalbtn" data-toggle="modal" data-target="#sellSignup">Business Customer</a>-->
+
+        <a type="button" class="btn btn-default btn-primary" data-toggle="modal" data-target="#myModal">Business Customer</a>
+      </div>
+    </div>
+    <!-- Button trigger modal -->
+
+
+    <!-- Register or Login Business customer -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content text-center">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Register or Login</h4>
+          </div>
+          <div class="modal-body">
+            <a class="btn btn-primary btn-lg" href="#" role="button" id="sell-modalbtn" data-toggle="modal" data-target="#sellSignup">Register</a>
+            <a class="btn btn-primary btn-lg" href="#" role="button" id="selllogin-modalbtn" data-toggle="modal" data-target="#sellLogin">Login</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="sellLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Login</h4>
+          </div>
+          <div class="modal-body">
+            <form id="signup" name="signup" method="post" action="http://localhost:8080/store/login">
+
+              <label for="email">Email Address</label>
+              <input class="email" name="email" type="email" placeholder="john@email.com" />
+
+              <label for="password">Password</label>
+              <input name="password" type="password" placeholder="Enter Password" />
+
+              <input class="btn" type="submit" value="Sign Up" />
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Sell Sign-up Modal -->
+    <div class="modal fade bd-example-modal-lg" id="sellSignup" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">X</span>
+          </button>
+            <h4 class="modal-title" id="modalLabel">Seller Sign-Up</h4>
+            <p>Sign up and start selling your products online</p>
+          </div>
+
+          <!-- Inputs for Sell Sign-Up -->
+          <div class="modal-body">
+            <div class="container-fluid">
+
+              <form method="post" action="http://localhost:8080/store/register">
+
+                <div class="form-group row no-gutters">
+                  <label for="sell-storeName-input">Store Name</label>
+                  <div class="col-9">
+                    <input class="form-control" name="storeName" type="text" placeholder="Enter the name of your store" id="sell-storeName-input"
+                      autocomplete="on">
+                  </div>
+                </div>
+
+                <div class="form-group row no-gutters">
+                  <label for="sell-lastName-input">Web Site</label>
+                  <div class="col-9">
+                    <input class="form-control" name="website" type="text" placeholder="Enter your last name" id="sell-lastName-input" autocomplete="on">
+                  </div>
+                </div>
+
+                <div class="form-group row no-gutters">
+                  <label for="sell-emailAddress-input">E-Mail Address</label>
+                  <div class="col-9">
+                    <input class="form-control" name="email" type="text" placeholder="Enter your E-Mail Address" id="sell-emailAddress-input"
+                      autocomplete="on">
+                  </div>
+                </div>
+
+                <div class="form-group row no-gutters">
+                  <label for="sell-passwordSet-input">Password</label>
+                  <div class="col-9">
+                    <input class="form-control" type="password" placeholder="Enter a password (Min. 8 characters)" id="sell-password-input" autocomplete="on">
+                  </div>
+                </div>
+
+                <div class="form-group row no-gutters">
+                  <label for="sell-passwordConfirm-input">Password</label>
+                  <div class="col-9">
+                    <input class="form-control" name="password" type="password" placeholder="Confirm your new Password" id="sell-passwordConfirm-input"
+                      autocomplete="on">
+                  </div>
+                </div>
+
+                <div class="form-group row no-gutters">
+                  <label for="sell-streetAddress-input">Phone</label>
+                  <div class="col-9">
+                    <input class="form-control" name="phone" type="text" placeholder="Enter your store address" id="sell-streetAddress-input"
+                      autocomplete="on">
+                  </div>
+                </div>
+
+                <div class="form-group row no-gutters">
+                  <button type="submit" id="sellSignupSubmit" class="btn btn-secondary">Register</button>
+                </div>
+
+              </form>
+
+              <!-- Close modal body div -->
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
 
@@ -68,7 +191,7 @@
               <li><a href="#/customer/delivery" id="delivery" data-toggle="modal" data-target="#myModal3">Delivery</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#/customer/login" id="login" data-toggle="modal" data-target="#myModal">Login</a></li>
+              <li><a href="#/customer/login" id="login" data-toggle="modal" data-target="#myModalClient">Login</a></li>
               <li><a href="#/customer/register" id="register" data-toggle="modal" data-target="#myModal2">Register</a></li>
             </ul>
             </ul>
@@ -78,7 +201,7 @@
       </nav>
 
       <!-- Login Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal fade" id="myModalClient" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -86,39 +209,18 @@
               <h4 class="modal-title" id="myModalLabel">Login</h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password" required>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                      <label>
-          <input type="checkbox"> Remember me
-        </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Sign in</button>
-                  </div>
-                </div>
+              <form id="signup" name="signup" method="post" action="http://localhost:8080/customer/signin">
+
+                <label for="email">Email Address</label>
+                <input class="email" name="email" type="email">
+
+                <label for="password">Password</label>
+                <input name="password" type="password">
+
+                <input class="btn" type="submit" value="Log in">
               </form>
             </div>
-            <!--<div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>-->
+
           </div>
         </div>
       </div>
@@ -132,8 +234,25 @@
               <h4 class="modal-title" id="myModalLabel">Register</h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal">
-                <div class="form-group">
+              <form class="form-horizontal" id="signup" name="signup" method="post" action="http://localhost:8080/customer/signup">
+
+                <label for="first_name">Firstname</label>
+                <input name="first_name" type="text" />
+
+                <label for="last_name">Lastname</label>
+                <input name="last_name" type="text" />
+
+                <label for="phone">Phone</label>
+                <input class="text" name="phone" type="text" />
+
+                <label for="email">Email Address</label>
+                <input class="email" name="email" type="email" />
+
+                <label for="password">Password</label>
+                <input name="password" type="password" />
+
+                <input class="btn" type="submit" value="Sign Up" />
+                <!--<div class="form-group">
                   <label for="exampleInputName2" class="col-sm-2 control-label">Name</label>
                   <div class="col-sm-10">
                     <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe" required>
@@ -164,7 +283,7 @@
                   <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default">Sign in</button>
                   </div>
-                </div>
+                </div>-->
               </form>
             </div>
             <!--<div class="modal-footer">
@@ -209,20 +328,14 @@
         <!--Side Nav-->
         <div class="list-group side-options">
           <button type="button" class="list-group-item" disabled>Choose Below:</button>
-          <button type="button" class="list-group-item active">Meat</button>
-          <button type="button" class="list-group-item">Produce</button>
-          <button type="button" class="list-group-item">Deli</button>
-          <button type="button" class="list-group-item">Dairy</button>
+          <button type="button" class="list-group-item active" data-id='meat'>Meat</button>
+          <button type="button" class="list-group-item" data-id='produce'>Produce</button>
+          <button type="button" class="list-group-item" data-id='deli'>Deli</button>
+          <button type="button" class="list-group-item" data-id='dairy'>Dairy</button>
           <button type="button" class="list-group-item last" disabled></button>
         </div>
-
+        <img src="./images/load.gif" alt="" style="margin: auto; width: 5%;" data-id='loader'>
         <div class="items">
-          <div class="item" id="item-1">chicken legs</div>
-          <div class="item" id="item-2">chicken breast</div>
-          <div class="item" id="item-3">pork shoulder</div>
-          <div class="item" id="item-4">bacon</div>
-          <div class="item" id="item-5">Rib Eye</div>
-          <div class="item" id="item-6">Filet Mignon</div>
         </div>
 
 

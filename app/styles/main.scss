@@ -127,17 +127,18 @@ img {
     .items {
       display: flex;
       flex-flow: row wrap;
-      justify-content: space-around;
+      justify-content: flex-start;
+      padding: 25px;
       .item {
-        height: 290px;
-        width: 290px;
-        border: 1px solid #333;
-        margin: 5px;
+        height: 300px;
+        width: 300px;
+        // border-left: 1px solid #333;
+        // border-right: 1px solid #333;
+        margin: 10px 20px;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
-        background: palevioletred;
+        flex-direction: column; // background: palevioletred;
       }
     }
   }

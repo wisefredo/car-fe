@@ -43,7 +43,7 @@ sideOptions.addEventListener('click', sideState);
 navParent.addEventListener('click', navState);
 
 
-/*Routing*/
+/*CLient side Routing for fun but not needed*/
 function customerScreen(e) {
   homeScreen.style.display = 'none';
   custScreen.style.display = 'block';
@@ -62,3 +62,62 @@ const routes = {
 //routing contructor
 const router = Router(routes);
 router.init();
+
+
+/*Data fetching here*/
+let arrayOfData;
+let groceryContainer = document.querySelector('.items')
+let html;
+
+
+const fetchJson = (path, options) => {
+  return fetch(path, options)
+    .then(res => res.json())
+}
+
+const fetchAll = () => fetchJson('http://localhost:8080/products');
+
+const loadData = () => {
+  return fetchAll()
+    .then(data => {
+      arrayOfData = [...data]
+      return arrayOfData;
+    })
+    .catch(err => console.error('something went wrong fetching data: ', err))
+}
+
+function loadALL() {
+  loadData()
+    .then((val) => {
+      console.log(val)
+      val.forEach((element, index) => {
+        html = (
+          `
+            <div class="item" id="item-${index}">
+              <img src="../images/${element.ProductDescription.description}.jpg" alt=""/>
+              <div style="font-weight: bold;">
+               ${element.ProductDescription.productName}
+              </div>
+              <div>Available for $${element.price}/lbs</div>
+              <div>
+                Add ${element.ProductDescription.productName} to your cart
+               
+              </div>
+              <form action="http://localhost:8080/customer/bucket/${element.id}" method="post">
+                <input class="btn" type="submit" value="Add To Cart" />
+              </form>
+            </div>
+          `
+        );
+
+        let newItem = document.createElement('div');
+        newItem.innerHTML = html;
+        groceryContainer.insertBefore(newItem.firstElementChild, groceryContainer.childNodes[0]);
+       
+      })
+    })
+    .then(() => document.querySelector('.contain img[data-id="loader"]').style.display = 'none')
+}
+
+const dairyOpt = document.querySelector('.side-options button[data-id="dairy"]')
+window.addEventListener('load', loadALL)
