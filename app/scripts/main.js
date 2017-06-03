@@ -123,17 +123,4 @@ const dairyOpt = document.querySelector('.side-options button[data-id="dairy"]')
 window.addEventListener('load', loadALL)
 
 
-/*logout buttons*/
-const loginGroup = document.querySelectorAll('.loginGroup');
-const logout = document.querySelector('.logout');
-const loginButtonModal = document.querySelector('#login-button');
-const registerButtonModal = document.querySelector('#register-button');
-
-loginButtonModal.addEventListener('click', ()=>{
-  loginGroup.forEach((v)=>{
-    v.style.display = 'none';
-  })
- 
-  logout.style.display = 'block';
-})
 
